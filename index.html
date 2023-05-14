@@ -1,39 +1,346 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    <style>
-        html,
-        body {
-            background-color: black;
-            font-family: 'Quicksand', sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            height: 100%;
-            width: 100%;
-        }
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfolio of frontend developer Mithilesh Kumar">
+  <meta name="keywords"
+    content="HTML, CSS, JavaScript, Portfolio, Resume, frontend developer, Ui developer, Mithilesh Kumar, Rionzz">
+  <meta name="author" content="Mithilesh Kumar">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-    </style>
+    html,
+    body {
+      background-color: black;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+
+    .info {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .info-details {
+      max-width: 500px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .info-picture {
+      background: url('assets/mithilesh-picture.jpg') no-repeat center;
+      background-size: 200px 200px;
+      width: 200px;
+      height: 200px;
+      border: solid white;
+    }
+
+    .info-details__about {
+      max-width: 300px;
+    }
+
+    .info h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .info h2 {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .button-resume {
+      margin-top: 10px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: white;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 31px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    .right::after {
+      left: -10px;
+    }
+
+    .content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+    }
+
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .content-header__first {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+    .content-header__designation {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .social {
+      height: 768px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+    }
+
+    .social-icon__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .social-github {
+      background: url('assets/icons/github.svg') no-repeat;
+    }
+
+    .social-twitter {
+      background: url('assets/icons/twitter.svg') no-repeat;
+    }
+
+    .social-linkedin {
+      background: url('assets/icons/linkedin.svg') no-repeat;
+    }
+
+    .social-codepen {
+      background: url('assets/icons/codepen.svg') no-repeat;
+    }
+
+    .social-instagram {
+      background: url('assets/icons/instagram.svg') no-repeat;
+    }
+
+
+    @media screen and (max-width: 600px) {
+
+      .info {
+        flex-direction: column;
+      }
+
+      .timeline::after {
+        left: 31px;
+      }
+
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .container::before {
+        left: 61px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .left::after,
+      .right::after {
+        left: 15px;
+      }
+
+      .right {
+        left: 0%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <section>
-        <h1>Hi, I'm Mithilesh Kumar</h1>
-        <h1>Frontend developer</h1>
-        <h1>in India.</h1>
-    </section>
+
+  <!-- Landing page containing basic details and profile picture. -->
+  <section class="info">
+    <div class="info-details">
+      <h1>Hi, I'm Mithilesh Kumar</h1>
+      <div class="info-details__about">
+        <h2>I am a UI/frontend developer who is passionate about developing not only visually impressive but performant,
+          scalable & accessible UI.</h2>
+      </div>
+      <button class="button-resume">Download resume</button>
+    </div>
+    <div class="info-picture">
+    </div>
+  </section>
+
+  <!-- Career timeline. -->
+  <section class="timeline">
+    <div class="container left">
+      <div class="content">
+        <div class="content-header">
+          <h2 class="content-header__first">BNY Mellon Technologies</h2>
+          <h2 class="content-header__first">August 2016 - October 2018</h2>
+        </div>
+        <h3 class='content-header__designation'>Application Developer</h3>
+        <p>- Enhancement and maintenance of authentication & authorization of application.</p>
+        <p>- Automation of manual monitoring using spring boot - Making UI responsive.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <div class="content-header">
+          <h2 class="content-header__first">Calsoft Pvt. Ltd.</h2>
+          <h2 class="content-header__first">October 2018 - April 2020</h2>
+        </div>
+        <h3 class="content-header__designation">Development Engineer</h3>
+        <p>- Ensuring the technical feasibility of UI/UX design.</p>
+        <p>- Adding new features and fixing bugs using javascript.</p>
+        <p>- Identifying and addressing performance bottlenecks.</p>
+        <p>- Participated in design and code reviews.</p>
+        <p>- Recreating the project in React</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <div class="content-header">
+          <h2 class="content-header__first">Veritas Technologies</h2>
+          <h2 class="content-header__first">April 2018 - April 2023</h2>
+        </div>
+        <h3 class="content-header__designation">Senior Software Engineer</h3>
+        <p>- Designed, developed, and orchestrated the addition of features into the product UI using Angular.</p>
+        <p>- Integrated web browser security compliant features to the product.</p>
+        <p>- Coding with functional, reactive, object oriented and modular approach</p>
+        <p>- Ensuring responsiveness, semantics and performance.</p>
+        <p>- Expertise in Unit Testing </p>
+        <p>- Oversaw UX designs and actively participated in code reviews</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <div class="content-header">
+          <h2 class="content-header__first">SLB</h2>
+          <h2 class="content-header__first">May 2023 - present</h2>
+        </div>
+        <h3 class="content-header__designation">Frontend Engineer</h3>
+        <p>- working on Angular nx mono repo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social media links. -->
+  <section class="social">
+    <h1>Let's connect</h1>
+    <div class="social-icon__container">
+      <a href="https://github.com/mithileshkumar" target="blank">
+        <div class="social-icon social-github">
+        </div>
+      </a>
+      <a href="https://twitter.com/mithilesh0108" target="blank">
+        <div class="social-icon social-twitter">
+        </div>
+      </a>
+      <a href="https://codepen.io/mithileshkumar" target="blank">
+        <div class="social-icon social-codepen">
+        </div>
+      </a>
+      <a href="https://in.linkedin.com/in/mithilesh-kumar-0442ab78" target="blank">
+        <div class="social-icon social-linkedin">
+        </div>
+      </a>
+      <a href="https://www.instagram.com/mithilesh0108" target="blank">
+        <div class="social-icon social-instagram">
+        </div>
+      </a>
+    </div>
+  </section>
+
 </body>
 
 </html>
