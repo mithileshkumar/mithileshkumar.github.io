@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <!-- the quote used was from 'Richard Feynman' -->
+  <!-- particleJS library used is from Vincent Garreau -->
   <meta charset="UTF-8">
   <meta name="description" content="Portfolio of frontend developer Mithilesh Kumar">
   <meta name="keywords"
@@ -11,6 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <script src="particles.js" defer></script>
+  <script src="app.js" defer></script>
   <style>
     * {
       box-sizing: border-box;
@@ -22,54 +26,52 @@
       font-family: 'Quicksand', sans-serif;
       height: 100%;
       width: 100%;
+      margin: 0;
+      padding: 0;
     }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      background-image: url("");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+
+    /* landing screen */
 
     .info {
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 100px;
+      flex-direction: column;
       height: 100%;
       width: 100%;
     }
 
-    .info-details {
-      max-width: 500px;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .info-picture {
-      background: url('assets/mithilesh-picture.jpg') no-repeat center;
-      background-size: 200px 200px;
-      width: 200px;
-      height: 200px;
-      border: solid white;
-    }
-
-    .info-details__about {
-      max-width: 300px;
-    }
-
     .info h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+      font-size: 50px;
+      z-index: 1;
+      margin: 5px;
     }
 
-    .info h2 {
-      font-size: 16px;
-      text-align: center;
-    }
-
-    .button-resume {
+    #download-resume {
       margin-top: 10px;
       height: 40px;
+      width: 40px;
       cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+      background-color: white;
     }
+
+    /* timeline */
 
     .timeline {
       position: relative;
@@ -189,15 +191,15 @@
     }
 
     .social-github {
-      background: url('assets/icons/github.svg') no-repeat;
+      background: url('assets/icons/github.svg') no-repeat #ffffff;
     }
 
     .social-twitter {
-      background: url('assets/icons/twitter.svg') no-repeat;
+      background: url('assets/icons/twitter.svg') no-repeat #ffffff;
     }
 
     .social-linkedin {
-      background: url('assets/icons/linkedin.svg') no-repeat;
+      background: url('assets/icons/linkedin.svg') no-repeat #ffffff;
     }
 
     .social-codepen {
@@ -213,6 +215,15 @@
 
       .info {
         flex-direction: column;
+      }
+
+      .info h1 {
+        font-size: 20px;
+      }
+
+      #download-resume {
+        height: 20px;
+        width: 20px;
       }
 
       .timeline::after {
@@ -246,18 +257,14 @@
 
 <body>
 
+  <div id="particles-js"></div>
+
   <!-- Landing page containing basic details and profile picture. -->
   <section class="info">
-    <div class="info-details">
-      <h1>Hi, I'm Mithilesh Kumar</h1>
-      <div class="info-details__about">
-        <h2>I am a UI/frontend developer who is passionate about developing not only visually impressive but performant,
-          scalable & accessible UI.</h2>
-      </div>
-      <button class="button-resume">Download resume</button>
-    </div>
-    <div class="info-picture">
-    </div>
+    <h1>I,</h1>
+    <h1>a universe of atoms,</h1>
+    <h1>an atom in the universe.</h1>
+    <img src="/assets/icons/download.svg" id="download-resume" />
   </section>
 
   <!-- Career timeline. -->
@@ -316,7 +323,7 @@
 
   <!-- Social media links. -->
   <section class="social">
-    <h1>Let's connect</h1>
+    <h1>Don't be a stranger, &nbsp; let's connect</h1>
     <div class="social-icon__container">
       <a href="https://github.com/mithileshkumar" target="blank">
         <div class="social-icon social-github">
@@ -326,18 +333,18 @@
         <div class="social-icon social-twitter">
         </div>
       </a>
-      <a href="https://codepen.io/mithileshkumar" target="blank">
-        <div class="social-icon social-codepen">
-        </div>
-      </a>
       <a href="https://in.linkedin.com/in/mithilesh-kumar-0442ab78" target="blank">
         <div class="social-icon social-linkedin">
+        </div>
+      </a>
+      <!-- <a href="https://codepen.io/mithileshkumar" target="blank">
+        <div class="social-icon social-codepen">
         </div>
       </a>
       <a href="https://www.instagram.com/mithilesh0108" target="blank">
         <div class="social-icon social-instagram">
         </div>
-      </a>
+      </a> -->
     </div>
   </section>
 
